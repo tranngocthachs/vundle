@@ -210,7 +210,7 @@ func! s:sync(bang, bundle) abort
     if isdirectory(git_dir)
         let cmd = cmd.' && git pull'
     else
-        let cmd = cmd.' && git merge origin/master'
+        let cmd = cmd.' && git fetch origin && git merge origin/master'
     endif
 
     if (has('win32') || has('win64'))
